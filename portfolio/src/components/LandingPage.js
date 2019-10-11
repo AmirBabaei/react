@@ -4,8 +4,8 @@ import { Grid, Cell} from 'react-mdl'
 class LandingPage extends Component {
   render() {
     return (
-      <div style={{width: '100%', margin: 'auto'}} >
-        <Grid className="lnding-grid">
+      <div className="landing-grid">
+        <Grid>
           <Cell col={12}>
             <img 
               src="https://cdn0.iconfinder.com/data/icons/avatar-78/128/12-512.png"
