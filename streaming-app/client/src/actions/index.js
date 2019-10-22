@@ -1,4 +1,5 @@
 import streams from '../apis/streams'
+import history from '../history'
 import {
   SIGN_IN,
   SIGN_OUT,
@@ -10,9 +11,10 @@ import {
 } from './types'
 
 //action creators
-export const signIn = () => {
+export const signIn = (userId) => {
   return {
-    type: SIGN_IN
+    type: SIGN_IN,
+    payload: userId
   }
 }
 
@@ -24,10 +26,16 @@ export const signOut = () => {
 
 // Action creators
 
-export const createStream = formProps => async dispatch => {
-  const response = await streams.post('/streams', formProps)
+export const createStream = formProps => async (dispatch, getState) => {
+  const { userId } = getState().auth
+  const response = await streams.post('/streams', { ...formProps, userId })
 
   dispatch({ type: CREATE_STREAM, payload: response.data })
+
+  // send the user back to sltream list page
+  // after creation of a stream
+  history.push('/')
+
 }
 
 export const fetchStreams = () => async dispatch => {
@@ -43,9 +51,10 @@ export const fetchStream = (id) => async dispatch => {
 }
 
 export const editStream = (id, formProps) => async dispatch => {
-  const response = await streams.put(`/streams/${id}`, formProps)
+  const response = await streams.patch(`/streams/${id}`, formProps)
 
   dispatch({ type: EDIT_STREAM, payload: response.data })
+  history.push('/')
 }
 
 export const deleteStream = (id) => async dispatch => {
