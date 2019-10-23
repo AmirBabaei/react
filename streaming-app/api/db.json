@@ -1,39 +1,21 @@
 {
   "streams": [
     {
-      "title": "my stream ",
-      "description": "this is a goodone",
-      "id": 1
-    },
-    {
-      "title": "other stream",
-      "description": "it's ok!",
-      "id": 2
-    },
-    {
-      "title": "News stream",
-      "description": "Just a test",
-      "id": 3
-    },
-    {
-      "title": "News stream",
-      "description": "Just a test",
-      "id": 4
-    },
-    {
-      "title": "testing",
-      "description": "just testing",
-      "id": 5
-    },
-    {
-      "title": "test2",
-      "description": "just testing again",
-      "id": 6
-    },
-    {
       "title": "Reusable comps",
       "description": "or is it?",
       "id": 9
+    },
+    {
+      "title": "this is just for test",
+      "description": "test only",
+      "userId": "114917729249707545321",
+      "id": 10
+    },
+    {
+      "title": "test2",
+      "description": "only test",
+      "userId": "114917729249707545321",
+      "id": 11
     }
   ]
 }
